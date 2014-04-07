@@ -1,11 +1,10 @@
 
-
 Algorithm.heapsort=function(input){
 	var result_array=[];
 	if(input.length<2){
 		return input;
 	}
-	/*construct the heap using heapify*/
+	/*Construct the heap using heapify*/
 
 	start=(Math.floor(input.length/2));
 	
