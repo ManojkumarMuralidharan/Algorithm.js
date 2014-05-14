@@ -13,7 +13,7 @@ Algorithm.insertionsort=function(input){
 		return input;
 	}
 
-	//outer loop to iterate over 0 to n-1 elements
+	/*outer loop to iterate over 0 to n-1 elements*/
 	for(var outerIndex=0;outerIndex<input.length;outerIndex++){
 		var currentElement= input[outerIndex];
 		/* 
