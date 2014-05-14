@@ -2,10 +2,11 @@
 Algorithm.quicksort.partition=function(input,start_pointer,end_pointer){
 /*Determine the partitioning point after moving elements into their right partition*/
 	
-	var pivot = input[Math.floor((start_pointer+end_pointer)/2)+1]; // Fixed Bug: 1] use (start_pointer+end_pointer)/2 instead of (start_pointer+end_pointer/2) 
-	                                                                //            2] Make sure the pivot elment is captured and not he index, since the value of 
-	                                                                //				 pivot will change or jump we take index for pivot
-
+	// Fixed Bug: 1] use (start_pointer+end_pointer)/2 instead of (start_pointer+end_pointer/2) 
+	//            2] Make sure the pivot elment is captured and not he index, since the value of 
+	//       	 pivot will change or jump we take index for pivot
+	var pivot = input[Math.floor((start_pointer+end_pointer)/2)+1];
+	
 	while(start_pointer<end_pointer){
 
 		/*Move the left pointer so the left partition has all elements < value of pivot */
