@@ -48,6 +48,9 @@ function LRUCache(size){
             hashMap[key].value;
             //also move it to the front of the queueHead
             //console.log('Getting node:',hashMap[key]);
+            if(hashMap[key].right===undefined){
+                tail = hashMap[key].left;
+            }
             moveToHead(hashMap[key]);
 
             return hashMap[key].value;
@@ -125,12 +128,16 @@ function LRUCache(size){
     //    }
      //  console.log('tail is ',tail);
     }
+    function getTail(){
+        return tail;
+    }
 
     init(size);
     return {
         get : get,
         set : set,
         printSize : printSize,
+        tail : getTail,
         size : capacity
     }
 };
@@ -139,21 +146,25 @@ var LRUCache1 = new LRUCache(2);
 
 LRUCache1.set(2,1);
 LRUCache1.printSize();
+console.log('tail is :',LRUCache1.tail());
 console.log('-------');
+
 LRUCache1.set(1,1);
 LRUCache1.printSize();
-console.log('-------');
+//console.log('tail is :',LRUCache1.tail());
+//console.log('-------');
 console.log(LRUCache1.get(2));
 LRUCache1.printSize();
-console.log('-------');
+//console.log('tail is :',LRUCache1.tail());
+//console.log('-------');
 LRUCache1.set(4,1); 
 LRUCache1.printSize();
-console.log('-------');
+//console.log('-------');
 console.log(LRUCache1.get(1));
-console.log('-------');
+//console.log('-------');
 console.log(LRUCache1.get(2));
-console.log('-------');
-LRUCache1.printSize();
+//console.log('-------');
+//LRUCache1.printSize();
 // LRUCache1.set(7,'m');
 // LRUCache1.printSize();
 // LRUCache1.set(8,'a');
