@@ -26,7 +26,12 @@ function LRUCache(size){
         //if not in the front of the queue
         var temp = queueHead;
         if(node.left){
-            node.left.right = node.right;
+            var leftNode = node.left;
+            leftNode.right = node.right;
+        }
+        if(node.right){
+            var righttNode = node.right;
+            righttNode.left = node.left;
         }
         //console.log('moving stuff from queueHead',queueHead);
         //console.log('moving stuff from temp',temp);
@@ -140,6 +145,7 @@ LRUCache1.printSize();
 LRUCache1.set(6,'k');
 LRUCache1.printSize();
 LRUCache1.get(8);
+LRUCache1.printSize();
 LRUCache1.set(1,'t');
 LRUCache1.printSize();
 
