@@ -7,16 +7,34 @@ function LRUCache(size){
         var left = null, right =null;
     }
     function init(size){
-    console.log('LRU Cache initialized with size:',size);
-    capacity = size; 
+        console.log('LRU Cache initialized with size:',size);
+        capacity = size; 
+    }
+    function insertNewIntoHead(node){
+        var temp = queueHead;
+        queueHead = node;
+        node.left = null;
+        node.right = temp;
+        temp.left = node;
+    }
+    function moveToHead(node){
+        var temp = queueHead;
+        if(node.left){
+            node.left.right = node.right;
+        }
+        queueHead = node;
+        queueHead.left = null;
+        queueHead.right = temp;
+        temp.left=queueHead;  
     }
     function get(){
 
     }
     function set(){
-
+        
     }
-    init();
+
+    init(size);
     return {
         get : get,
         set : set,
