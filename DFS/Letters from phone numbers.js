@@ -57,6 +57,9 @@ var letterCombinations = function(digits) {
 };
 
 
+//runnning time is O(3^n) - we need to give out all possible combinations
+
+
 //Solution:
 // Now let’s do some examples.
 // For number above 234. Do you see any pattern? Yes, we notice that the last character always either G,H or I and whenever it resets its value from I to G, the digit at the left of it gets changed.
