@@ -1,4 +1,4 @@
-// Lowest Common Ancestor of a Binary Tree   QuestionEditorial Solution  My Submissions
+ // Lowest Common Ancestor of a Binary Tree   QuestionEditorial Solution  My Submissions
 // Total Accepted: 65726
 // Total Submissions: 224874
 // Difficulty: Medium
@@ -14,6 +14,10 @@
  *     this.left = this.right = null;
  * }
  */
+
+// THIS CONSIDERS THAT BOTH NODES ARE IN THE TREE 
+// IF WE SEARCH FOR A NODE and its CHILD - we return the first node that is encountered , i.e., 
+// if we search  p and q and q is the child of p, we encounter P first and return it as the answer, we dont search q
 /**
  * @param {TreeNode} root
  * @param {TreeNode} p
@@ -37,8 +41,9 @@ var lowestCommonAncestor = function(root, p, q) {
             
        
         if(isFoundinLeft!==null && isFoundinRight!==null){
+            //This section is different from Binary Search Tree, its simple here
             console.log('comes in here',isFoundinLeft.val,'p',p,'right',isFoundinRight.val,'and q is ',q,'root is ',root.val);
-            if((isFoundinLeft===p&&isFoundinRight===q) || (isFoundinLeft===q&&isFoundinRight===p)){
+            if((isFoundinLeft===p&&isFoundinRight===q) || (isFoundinLeft===q&&isFoundinRight===p)){ // unwanted condition
                 return root;
              }else{
                 return null;    
