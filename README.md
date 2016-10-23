@@ -1,4 +1,4 @@
 Algorithm.js
 ============
 
-A javascript repo for all algorithm related topics
+Replaying algorithimic challenges in my favourite Language -  JavaScript 
