@@ -12,38 +12,38 @@
 
 function constructHTree(cords, length, depth) {
 
-        var x = cords.x,
-            y = cords.y;
-        //Base condition 
-        if (depth === 0) {
-            //do nothing
-            return;
-        } else {
-            //calculate the 4 co-ordinates;
-            var x0 = x - length / 2;
-            var x1 = x + length / 2;
-            var y0 = y - length / 2;
-            var y1 = y + length / 2;
+    var x = cords.x,
+        y = cords.y;
+    //Base condition 
+    if (depth === 0) {
+        //do nothing
+        return;
+    } else {
+        //calculate the 4 co-ordinates;
+        var x0 = x - length / 2;
+        var x1 = x + length / 2;
+        var y0 = y - length / 2;
+        var y1 = y + length / 2;
 
-            var topLeft = { 'x': x0, 'y': y1 },
-                topRight = { 'x': x1, 'y': y1 },
-                botLeft = { 'x': x0, 'y': y0 },
-                botRight = { 'x': x0, 'y': y1 };
-            //Draw three lines   
-            drawLine(x0, y, x1, y);
-            drawLine(x0, y0, x0, y1);
-            drawLine(x1, 0, x1, y1);
+        var topLeft = { 'x': x0, 'y': y1 },
+            topRight = { 'x': x1, 'y': y1 },
+            botLeft = { 'x': x0, 'y': y0 },
+            botRight = { 'x': x0, 'y': y1 };
+        //Draw three lines   
+        drawLine(x0, y, x1, y);
+        drawLine(x0, y0, x0, y1);
+        drawLine(x1, 0, x1, y1);
 
-            drawHtree(topLeft, length / Math.sqrt(2), depth - 1)
+        drawHtree(topLeft, length / Math.sqrt(2), depth - 1)
 
-            drawHtree(topRight, length / Math.sqrt(2), depth - 1);
+        drawHtree(topRight, length / Math.sqrt(2), depth - 1);
 
-            drawHtree(botLeft, length / Math.sqrt(2), depth - 1);
+        drawHtree(botLeft, length / Math.sqrt(2), depth - 1);
 
-            drawHtree(botRight, length / Math.sqrt(2), depth - 1);
-        }
-
+        drawHtree(botRight, length / Math.sqrt(2), depth - 1);
     }
+
+}
 
 
 //Thoughts
