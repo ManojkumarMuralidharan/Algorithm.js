@@ -38,7 +38,7 @@ function rotateMatrix(matrix, n) {
             matrix[inner_loop][last] = temp; //last is not used, so we don;t use offset
         }
     }
-    printMatrix(matrix);
+    //printMatrix(matrix);
     return matrix;
 }
 
@@ -59,7 +59,13 @@ function rotateMatrix(matrix, n) {
         [5, 4, 3, 6, 7]
     ];
 
-    if (rotateMatrix(input, 5) === output) {
+    if (isEqual(rotateMatrix(input, 5), output)) {
         console.log('pass');
     }
 })();
+
+//Comparing two dimensional arrays 
+// You cannot compare 2D arrays like array1 == array2 in javascript 
+function isEqual(array1, array2) {
+    return (array1.join('-') == array2.join('-'));
+}
