@@ -1,4 +1,6 @@
+//http://javarevisited.blogspot.com/2013/03/top-15-data-structures-algorithm-interview-questions-answers-java-programming.html
 // Given pointer to the head node of a linked list, the task is to reverse the linked list.
+
 
 // Examples:
 
