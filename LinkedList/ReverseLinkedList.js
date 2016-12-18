@@ -52,7 +52,7 @@ function printLinkedList(root) {
     console.log(listString);
 };
 
-
+//Iterative version
 function reverseLinkedList(root) {
     //Take a three pointer approa
     var prev, current = root,
@@ -72,4 +72,22 @@ function reverseLinkedList(root) {
     return current;
 }
 
+
+
+//Recursive version
+function reverseLinkedListRecursion(root, prev) {
+    if (!root.next) {
+        root.next = prev;
+        return root;
+    } else if (root.next) {
+        var next = root.next;
+        root.next = prev;
+        return reverseLinkedListRecursion(next, root);
+
+    }
+}
+
+//testcases
 printLinkedList(reverseLinkedList(createLinkedList([1, 2, 3, 4, 5, 6, 7])));
+//testcases
+printLinkedList(reverseLinkedListRecursion(createLinkedList([1, 2, 3, 4, 5, 6, 7]), undefined));
