@@ -43,6 +43,8 @@ function LongestCommonSub_Iterative(str1, str2, m, n) {
                 if (tabulation[i] === undefined) {
                     tabulation[i] = [];
                 }
+                //takes care of populating a row with all Zero
+                //Happens only for first row and first column i.e., i=0 || j=0
                 tabulation[i][j] = 0;
             } else {
                 if (str1.charAt(i - 1) === str2.charAt(j - 1)) {
