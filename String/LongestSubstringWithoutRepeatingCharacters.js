@@ -43,7 +43,7 @@ var lengthOfLongestSubstring = function(s) {
 
 (function UnitTest() {
     var expected = 3;
-    var input = "abcabcbb";
+    var input = "pwwkew";
     var actual = lengthOfLongestSubstring(input);
     if (actual === expected) {
         console.log('Pass');
