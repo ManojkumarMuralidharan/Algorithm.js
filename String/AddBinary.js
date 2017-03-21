@@ -46,10 +46,10 @@ var addBinary = function(a, b) {
     var expected = '100';
     var input1 = '11';
     var input2 = '1';
-    if(addBinary(input1,input2)===expected){
+    if (addBinary(input1, input2) === expected) {
         console.log('Pass');
-    }else{
+    } else {
         console.log('Fail');
     }
-    
+
 })();
