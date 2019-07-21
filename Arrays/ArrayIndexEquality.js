@@ -51,7 +51,7 @@ function arrayIndexEquality(input,start,end){
       // look only on right
       return arrayIndexEquality(input,mid+1,end);
    }else if(input[mid]===mid){
-      //if it matches
+      //if it matches 
       return mid;
    }
    
